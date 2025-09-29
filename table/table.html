@@ -10,6 +10,7 @@
       border-collapse: collapse;
       margin: 20px 0;
       width: 60%;
+      text-align: center;
     }
 
     th, td {
@@ -19,7 +20,7 @@
     }
 
     th {
-      background-color: lightblue;
+      background-color: rgb(236, 168, 79);
     }
     
     .div1{
@@ -37,11 +38,22 @@
 
     .table2 {
       background-color: #ffe6e6;
+      tr:hover {
+        background-color: yellowgreen;
     }
-
+  }
     .table3 {
-      background-color: #a3f0a3;
-    }
+       th {
+       background-color: #4CAF50;
+      color: white;
+       }
+      tr:nth-child(even) {
+      background-color: aquamarine;
+      }
+        tr:hover {
+            background-color:purple ;
+        }
+      }
   </style>
 </head>
 <body>
@@ -114,21 +126,29 @@
   </table>
 </div>
 <div>
-  <h2 style="color: orange;"> <u>Test Marks</u> </h2>
   <table class="table3">
     <tr>
-      <th>Subject</th>
-      <th>Marks</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
     </tr>
     <tr>
-      <td>HTML</td>
-      <td>90</td>
+        <td>1</td>
+        <td>Harish</td>
+        <td>20</td>
     </tr>
     <tr>
-      <td>Css</td>
-      <td>85</td>
+        <td>2</td>
+        <td>Dhivi</td>
+        <td>21</td>
     </tr>
-  </table>
+    <tr>
+        <td>3</td>
+        <td>Raj</td>
+        <td>22</td>
+    </tr>
+    <tr><td>4</td><td>Babu</td><td>21</td></tr>
+</table>
 </div>
  <div >
     <h2 style="color: blue;"><u>Media</u></h2>
