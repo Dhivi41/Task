@@ -1,0 +1,28 @@
+.body{
+    background-color: pink;
+}
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.intro {
+  font-style: italic;
+}
+
+.highlight {
+  background-color: #8dd6c0;
+  padding: 8px;
+}
+
+#header {
+  color: #d30000;
+  font-size: 32px;
+  padding-left: 35%;
+}
+
+.box {
+  border: 2px solid #021bff;
+  background-color:whitesmoke;
+  padding: 16px;
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tables </title>
+  <style>
+  
+    table {
+      border-collapse: collapse;
+      margin: 20px 0;
+      width: 60%;
+    }
+
+    th, td {
+      border: 2px solid black;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: lightblue;
+    }
+    
+    .div1{
+        display: inline-block;
+        padding-left: 30%;
+       
+    }
+    .div2{
+        display: inline-block;
+        padding: 40px;
+    }
+    .table1 {
+      background-color: #f9f9f9;
+    }
+
+    .table2 {
+      background-color: #ffe6e6;
+    }
+
+    .table3 {
+      background-color: #a3f0a3;
+    }
+  </style>
+</head>
+<body>
+<div class="div1" >
+  <h2 style="color: tomato;"><u>Shopping List</u></h2>
+  <ul style="color: yellowgreen;">
+    <li>Milk</li>
+    <li>Bread</li>
+    <li>Eggs</li>
+    <li>Vegetables
+      <ul>
+        <li>Tomatoes</li>
+        <li>Potatoes</li>
+        <li>Carrots</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+<div class="div2">
+  <h2 style="color: purple;"><u>Daily Routine</u></h2>
+  <ol style="color: rgb(247, 0, 255);">
+    <li>Wake up</li>
+    <li>Brush teeth</li>
+    <li>Make breakfast
+      <ol>
+        <li>Boil water</li>
+        <li>Brew coffee</li>
+        <li>Toast bread</li>
+      </ol>
+    </li>
+    <li>Go to College</li>
+  </ol>
+</div>
+<div>
+  <h2 style="color: springgreen;"><u>Groceries</u></h2>
+  <table class="table1">
+    <tr>
+      <th>Item</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    <tr>
+      <td>Milk</td>
+      <td>2</td>
+      <td>Rs.40</td>
+    </tr>
+    <tr>
+      <td>Bread</td>
+      <td>1</td>
+      <td>Rs.20</td>
+    </tr>
+  </table>
+</div>
+<div>
+  <h2 style="color: violet;"><u>Empolyee Data</u></h2>
+  <table class="table2">
+    <tr>
+      <th colspan="2">Personal Info</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td rowspan="2">Name</td>
+      <td>First:Harish</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>Last: Babu</td>
+      <td>26</td>
+    </tr>
+  </table>
+</div>
+<div>
+  <h2 style="color: orange;"> <u>Test Marks</u> </h2>
+  <table class="table3">
+    <tr>
+      <th>Subject</th>
+      <th>Marks</th>
+    </tr>
+    <tr>
+      <td>HTML</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <td>Css</td>
+      <td>85</td>
+    </tr>
+  </table>
+</div>
+ <div >
+    <h2 style="color: blue;"><u>Media</u></h2>
+    <video width="320" height="240" controls>
+    <source src="" type="video/mp4">
+    <source src="" type="video/ogg">
+    </video controls>
+    <audio controls>
+        <source src="" type="audio/mp3">
+        <source src="" type="audio/ogg">
+    </audio controls>
+    </div>
+</body>
+</html>
