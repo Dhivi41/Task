@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    h2 {
+      margin-top: 50px;
+      padding-bottom: 5px;
+    }
+    .grid-item {
+      background: rgb(229, 149, 233);
+      border: 2px solid rgb(179, 19, 131);
+      padding: 15px;
+      text-align: center;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+
+    .grid-template {
+      display: grid;
+      grid-template-columns: 100px 1fr 2fr;
+      grid-template-rows: 80px auto;
+      gap: 10px;
+      border: 3px solid #333;
+      padding: 10px;
+      background: #88cc86;
+    }
+    .grid-auto {
+      display: grid;
+      grid-template-columns: 100px 100px;
+      grid-auto-rows: 70px;
+      gap: 10px;
+      border: 3px solid #333;
+      padding: 10px;
+      background: #89b7d6;
+    }
+    .grid-flow {
+      display: grid;
+      grid-template-columns: 100px 100px;
+      grid-auto-flow: column;
+      gap: 10px;
+      border: 3px solid #333;
+      padding: 10px;
+      background: #db8497;
+    }
+    .grid-gap {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      gap: 20px;
+      border: 3px solid #333;
+      padding: 10px;
+      background: #cac169;
+    }
+    .grid-items-align {
+      display: grid;
+      grid-template-columns: repeat(3, 120px);
+      grid-template-rows: 120px;
+      justify-items: center;
+      align-items: center;
+      gap: 10px;
+      border: 3px solid #333;
+      padding: 10px;
+      background: #7e85e2;
+    }
+
+    .grid-content-align {
+      display: grid;
+      grid-template-columns: repeat(2, 100px);
+      grid-template-rows: repeat(2, 100px);
+      height: 300px;
+      justify-content: space-around;
+      align-content: center;
+      gap: 10px;
+      border: 3px solid #333;
+      padding: 10px;
+      background: #ec9dcb;
+    }
+
+    #grid {
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 10px;
+      border: 3px solid #333;
+      margin-top: 20px;
+      background: #b3ecd0;
+      padding: 10px;
+    }
+
+    #grid div {
+      font-size: 2em;
+      padding: 0.5em;
+      background: rgb(152, 118, 214);
+      color: rgb(0, 0, 0);
+      text-align: center;
+      border-radius: 10px;
+    }
+
+    .item {
+      grid-column-start: 1;
+      grid-column-end: 3; 
+    }
+
+    .item2 {
+      grid-row-start: 2;
+      grid-row-end: 4; 
+    }
+
+    .item3 {
+      order: 3;
+    }
+
+  </style>
+</head>
+<body>
+
+  <h1> Grid Container & Item Properties</h1>
+
+  <h2>1.Template columns & template rows</h2>
+  <div class="grid-template">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+  </div>
+
+  <h2>2.Auto rows & auto columns</h2>
+  <div class="grid-auto">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3 (auto row)</div>
+    <div class="grid-item">4 (auto row)</div>
+  </div>
+
+  <h2>3.Auto Flow</h2>
+  <div class="grid-flow">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+  </div>
+
+  <h2>4. Gap</h2>
+  <div class="grid-gap">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+  </div>
+
+  <h2>5. justify items & align items</h2>
+  <div class="grid-items-align">
+    <div class="grid-item">A</div>
+    <div class="grid-item">B</div>
+    <div class="grid-item">C</div>
+  </div>
+
+  <h2>6. justify content & align content</h2>
+  <div class="grid-content-align">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+  </div>
+  <h2>7. Grid Item Properties </h2>
+  <div id="grid">
+    <div class="item">1 (span columns)</div>
+    <div class="item2">2 (span rows)</div>
+    <div class="item3">3 (ordered later)</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+    <div>7</div>
+    <div>8</div>
+  </div>
+
+</body>
+</html>
