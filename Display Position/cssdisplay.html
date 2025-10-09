@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SLA Institute Student Portal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background-color: #f4f6fb;
+      color: #333;
+      display: flex;
+    }
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 240px;
+  height: 100vh;
+  background-color: #004aad;
+  color: white;
+  padding-top: 30px;
+  transition: 0.3s ease;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 10px;
+}
+
+.sidebar a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 12px 30px;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.sidebar a:hover,
+.sidebar a.active {
+  background-color: #005eea;
+  padding-left: 40px;
+}
+
+.menu-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #004aad;
+  color: white;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  z-index: 1001;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.menu-btn:hover {
+  background-color: #0066ff;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+#menu-toggle:checked ~ .sidebar {
+  left: -240px;
+}
+
+#menu-toggle:checked ~ .main {
+  margin-left: 0;
+  width: 100%;
+}
+    .menu-btn {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #004aad;
+      color: white;
+      padding: 5px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      z-index: 1001;
+      font-size: 1.2rem;
+    }
+
+    .main {
+      margin-left: 240px;
+      width: calc(100% - 240px);
+      display: flex;
+      flex-direction: column;
+      transition: margin-left 0.3s;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 1.4rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+      position: sticky;
+      top: 0; 
+    }
+    .hero {
+      background: linear-gradient(to right, #004aad, #0894ff);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+      border-radius: 8px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1000px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+     .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      width: 90%;
+      margin: 20px auto;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: #004aad;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    .announcements {
+      background: rgb(202, 202, 202);
+      width: 90%;
+      margin: 30px auto;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .announcements h2 {
+      color: #004aad;
+      border-bottom: 2px solid #004aad;
+      margin-bottom: 15px;
+      padding-bottom: 5px;
+    } 
+
+    footer {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+      margin-top: auto;
+    }
+    .display-block {
+      display: block;
+      background: #19b660;
+      padding: 10px;
+      margin: 5px 0;
+    }
+
+    .display-inline {
+      display: inline;
+      background: #f9e79f;
+      padding: 10px;
+      margin: 2px;
+    }
+
+    .display-inline-block {
+      display: inline-block;
+      width: 120px;
+      height: 60px;
+      background: #2d36b4;
+      text-align: center;
+      line-height: 60px;
+      margin: 5px;
+    }
+
+    .hidden-text {
+      display: none;
+      color: red;
+      font-weight: bold;
+    }
+
+    .position-container {
+      border: 2px solid #004aad;
+      height: 200px;
+      width: 90%;
+      margin: 20px auto;
+      position: relative;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .static-box {
+      background: #f1c40f;
+      padding: 10px;
+      margin: 5px;
+    }
+
+    .relative-box {
+      background: #e67e22;
+      padding: 10px;
+      position: relative;
+      top: 20px;
+      left: 20px;
+    }
+
+    .absolute-box {
+      background: #8e44ad;
+      color: white;
+      padding: 10px;
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+    }
+
+    .fixed-box {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: #c0392b;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 6px;
+      z-index: 1002;
+    }
+    .box {
+      border: 2px dashed darkred;
+      height: 200px;
+      width: 90%;
+      margin: 20px auto;
+      position: relative;
+      border-radius: 8px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+<input type="checkbox" id="menu-toggle">
+<nav class="sidebar">
+    <br><br><br>
+  <a href="#" class="active">Home</a>
+  <a href="#">Courses</a>
+  <a href="#">Results</a>
+  <a href="#">Profile</a>
+  <a href="#">Contact</a>
+</nav>
+<label for="menu-toggle" class="menu-btn"><h2>☰ Menu</h2></label>
+  <div class="fixed-box">Latest News</div>
+  <div class="main">
+    <header>Welcome to SLA Institute Student Portal</header>
+    <section class="hero">
+      <h1>Empowering Your Learning Journey</h1>
+      <p>Access your courses, results, and updates anytime, anywhere with SLA Portal.</p>
+    </section>
+
+    <section class="dashboard">
+      <div class="card">
+        <h3>My Courses</h3>
+        <p>View enrolled subjects, course materials, and schedules.</p>
+      </div>
+    
+      <div class="card">
+        <h3>Exam Results</h3>
+        <p>Check your latest academic results and performance reports.</p>
+      </div>
+    
+      <div class="card">
+        <h3>Attendance</h3>
+        <p>Monitor your attendance records and attendance percentage.</p>
+      </div>
+    
+      <div class="card">
+        <h3>Profile</h3>
+        <p>Update personal details and view student information.</p>
+      </div>
+    </section>
+    
+    <div class="box">
+    <div class="display-block"> Block</div>
+    <div class="display-block"> Block</div>
+    <div class="display-inline"> Inline</div>
+    <div class="display-inline"> Inline</div>
+    <div class="display-inline-block">Inline Block</div>
+    <div class="display-inline-block">Inline Block</div>
+</div>
+    
+<p class="hidden-text">This text is hidden .</p>
+
+    <div class="position-container">
+      <div class="static-box">Static Box</div>
+      <div class="relative-box">Relative Box</div>
+      <div class="absolute-box">Absolute Box</div>
+    </div>
+
+    <section class="announcements">
+      <h2> Latest Announcements</h2>
+      <div class="announcement item">
+        <h4>Semester Exams Begin on 20th Oct 2025</h4>
+        <p>Check the timetable under the Courses section.</p>
+      </div>
+
+      <div class="announcement item">
+        <h4>New Course Materials Available</h4>
+        <p>Updated PDFs for Semester VI are now uploaded under My Courses.</p>
+      </div>
+
+      <div class="announcement item">
+        <h4>Library Membership Renewal</h4>
+        <p>Renew before 15th October to avoid penalties.</p>
+      </div>
+    </section>
+
+    <footer>
+      © 2025 SLA Institute — Student Portal | Designed for Learning Excellence
+    </footer>
+  </div>
+</body>
+</html>
