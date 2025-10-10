@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables and Operators</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: linear-gradient(to right, #ff7e5f, #7bb4fe);
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Variables, Data Types, and Operators</h1>
+  <p><b>Check console for output</b></p>
+  <script>alert("Welcome to My Task Page!")</script> 
+  <script>
+
+        var name = "Dhivi";
+        let age = 21;
+        const regno = 2022302020;
+
+        let text = "Hello! This is My Js Task"; // string
+        let number = 100;             // number
+        let isStudent = true;          // boolean
+        let emptyValue = null;        // null
+        let notAssigned;              // undefined
+
+        let sum = number + 20; 
+        let difference = number - 25;
+        let product = 10 * 5;
+        let division = 100 / 4;
+
+        let andOperator = (age > 18 && isStudent);
+        let orOperator = (age < 18 || isStudent);
+ 
+    document.write("<b> var:</b> Name = " + name + "<br>");
+    document.write("<b> let:</b> Age = " + age + "<br>");
+    document.write("<b> const:</b> RegNo = " + regno + "<br><br>");
+
+    console.log("\n--- Data Types ---");
+    console.log("String:", text);
+    console.log("Number:", number);
+    console.log("Boolean:", isStudent);
+    console.log("Null:", emptyValue);
+    console.log("Undefined:", notAssigned);
+
+    console.log("\n--- Arithmetic Operators ---");
+    console.log("Addition :", sum);
+    console.log("Subtraction :", difference);
+    console.log("Multiplication :", product);
+    console.log("Division :", division);
+
+    console.log("\n--- Comparison & Logical Operators ---");
+    console.log("AND:", andOperator);
+    console.log("OR :", orOperator);
+  </script>
+</body>
+</html>
