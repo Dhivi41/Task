@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS Functions</title>
+  <style>
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #74b9ff, #a29bfe);
+      color: #333;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      background: white;
+      padding: 40px 60px;
+      border-radius: 20px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 400px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .container:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      color: #2d3436;
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+
+    button {
+      background-color: #6c5ce7;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #341f97;
+      transform: scale(1.05);
+    }
+
+    p {
+      margin-top: 30px;
+      font-size: 14px;
+      color: #0984e3;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h2> Welcome to my JS Functions Task! </h2>
+    <button onclick="greeting(displayMessage)">Click Me</button>
+    <p>Click the above button .</p>
+  </div>
+
+  <script>
+    // Function with callback
+    function greeting(callback) {
+      let name = prompt("Enter your name:");
+      callback(name);
+    }
+
+    function displayMessage(Name) {
+      alert("Hello, " + Name + "! Open console (F12) and check the outputs.");
+    }
+
+
+
+    function add(a, b) {
+      return a + b;
+    }
+    console.log("Add 5 + 3 =", add(5, 3));
+
+    
+    const multiply = function(x, y) {
+      return x * y;
+    };
+    console.log("Multiply 4 * 6 =", multiply(4, 6));
+
+
+    const subtract = (p, q) => p - q;
+    console.log("Subtract 10 - 7 =", subtract(10, 7));
+
+    // Function with parameters and return
+    function average(num1, num2, num3) {
+      let total = num1 + num2 + num3;
+      return total / 3;
+    }
+    console.log("Average of 5, 10, 15 =", average(5, 10, 15));
+
+    // Global and Local Scope
+    let myName = "I'm Dhivi (Global variable output)";
+
+    function sayHello() {
+      let greeting = "Hello! (Local variable output)";
+      console.log(myName);
+      console.log(greeting);
+    }
+
+    sayHello();
+    console.log(myName);
+  </script>
+</body>
+</html>
