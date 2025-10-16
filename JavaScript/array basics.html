@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #a2c9f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .container {
+      background-color: #ffffff;
+      padding: 30px 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 350px;
+    }
+
+    h2 {
+      color: #2d3436;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #0984e3;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #74b9ff;
+      transform: scale(1.05);
+    }
+
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #a0a2a3;
+      border-radius: 6px;
+      min-height: 40px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+    
+  <div class="container">
+    <h2>JavaScript Array Basics</h2>
+    <button onclick="addCities()">Use push()</button>
+    <button onclick="removeLast()">Use pop()</button>
+    <button onclick="addAtStart()">Use unshift()</button>
+    <button onclick="removeFirst()">Use shift()</button>
+    <button onclick="printCities()">Print Array (for loop)</button>
+    <p id="output"></p>
+  </div>
+
+  <script>
+    let cities = ["Mumbai", "Hyderabad", "Kolkata"];
+
+    function showArray() {
+      document.getElementById("output").innerHTML = "Cities: " + cities.join(", ");
+    }
+
+    // push()
+    function addCities() {
+      cities.push("Coimbatore");
+      showArray();
+      console.log("After push:", cities);
+    }
+
+    // pop()
+    function removeLast() {
+      cities.pop();
+      showArray();
+      console.log("After pop:", cities);
+    }
+
+    // unshift()
+    function addAtStart() {
+      cities.unshift("Chennai");
+      showArray();
+      console.log("After unshift:", cities);
+    }
+
+    // shift()
+    function removeFirst() {
+      cities.shift();
+      showArray();
+      console.log("After shift:", cities);
+    }
+
+    // for loop
+    function printCities() {
+      let text = "All Cities:<br>";
+      for (let i = 0; i < cities.length; i++) {
+        text += cities[i] + "<br>";
+        console.log(cities[i]);
+      }
+      document.getElementById("output").innerHTML = text;
+    }
+    showArray();
+  
+  </script>
+</body>
+</html>
