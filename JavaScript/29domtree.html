@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SLA College</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #004aad;
+      color: white;
+      padding: 15px 30px;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    .menu {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      position: relative;
+    }
+
+    .menu li a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+    }
+
+    .menu li a:hover {
+      background-color: #002b66;
+      border-radius: 5px;
+    }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background-color: white;
+      color: black;
+      min-width: 150px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      z-index: 1;
+    }
+
+    .dropdown-menu li a {
+      color: black;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      display: block;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+      background: white;
+      margin: 20px auto;
+      width: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      display: none;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    .course-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .course {
+      background-color: #eaf2ff;
+      border: 1px solid #004aad;
+      border-radius: 10px;
+      padding: 15px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 2px 2px 6px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background-color: #004aad;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #002b66;
+    }
+
+    footer {
+      background-color: #004aad;
+      color: white;
+      text-align: center;
+      padding: 10px 0;
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="navbar">
+    <h2 class="logo">SLA College</h2>
+    <ul class="menu">
+        <li><a onclick="showSection('home')">Home</a></li>
+        <li class="dropdown">
+          <a >About ▼</a>
+      <ul class="dropdown-menu">
+          <li><a onclick="showSection('about')">About Us</a></li>
+          <li><a onclick="showSection('departments')">Departments</a></li>
+      </ul>
+        </li>
+        <li><a onclick="showSection('contact')">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home-->
+  <section id="home" class="active">
+    <h2>Welcome to SLA College</h2>
+    <p>Explore our popular courses below:</p>
+    <button onclick="showCourses()">Show Courses</button>
+    <div id="courseList" class="course-container"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2>About Our College</h2>
+    <p>
+      SLA College is a reputed educational institution focused on excellence in academics, 
+      innovation, and holistic student development. Our mission is to empower students with 
+      the knowledge and skills needed for success in the modern world.
+    </p>
+  </section>
+
+  <!-- Departments -->
+  <section id="departments">
+    <h2>Departments</h2>
+    <p>We offer a wide range of programs across multiple disciplines:</p>
+    <ul style="list-style: none; padding: 0;">
+      <li>• Full Stack Development</li>
+      <li>• Data Science</li>
+      <li>• Cloud Computing</li>
+      <li>• Cyber Security</li>
+      <li>• Artificial Intelligence & Machine Learning</li>
+    </ul>
+  </section>
+
+  <!-- Contact-->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: info@slacollege.edu</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Address: 123, KK Nagar, Chennai, India</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 SLA College. All rights reserved.</p>
+  </footer>
+
+  <script>
+
+    function showSection(sectionId) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(sectionId).classList.add('active');
+    }
+
+    //Array Methods
+    let courses = ["Cyber Security", "Full Stack", "AI/ML", "Cloud Computing", "Data Science"];
+
+    function showCourses() {
+      courses.push("Networking");     
+      courses.pop();                 
+      courses.unshift("Web Design"); 
+      courses.shift();               
+      let found = courses.find(c => c.includes("AI")); 
+      let output = "";
+      courses.forEach((course, index) => {
+        output += `<div class='course'><h4>${index + 1}. ${course}</h4></div>`;
+      });
+
+      document.getElementById("courseList").innerHTML = output;
+
+      console.log("Courses:", courses);
+      console.log("Found Course:", found);
+    }
+  </script>
+
+</body>
+</html>
