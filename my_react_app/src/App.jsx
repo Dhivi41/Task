@@ -4,7 +4,7 @@ import Footer from './components/Footer';
 import Button from './components/Button';
 
 const App = () => {
-  const handleClick = (msg) => {
+const handleClick = (msg) => {
     alert(msg);
   };
 
