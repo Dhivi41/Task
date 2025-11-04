@@ -12,7 +12,7 @@ const handleClick = (msg) => {
     <div style={{ textAlign: 'center', fontFamily: 'Arial', padding: '20px' }}>
       <Header title="Welcome to My Task App!" />
 
-      <h2> Button Component</h2>
+      <h2>Functional Components</h2>
 
       <Button 
         label="Click Me" 
