@@ -1,39 +1,27 @@
-import React from 'react';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Button from './components/Button';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
-const App = () => {
-const handleClick = (msg) => {
-    alert(msg);
-  };
-
+function App() {
   return (
-    <div style={{ textAlign: 'center', fontFamily: 'Arial', padding: '20px' }}>
-      <Header title="Welcome to My Task App!" />
+    <div className="website-container">
+      <Header />
 
-      <h2>Functional Components</h2>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </main>
 
-      <Button 
-        label="Click Me" 
-        color="green"
-        onClick={() => handleClick('You clicked the Green Button!')} 
-      />
-
-      <Button 
-        label="Submit" 
-        color="blue"
-        onClick={() => handleClick('Form Submitted!')} 
-      />
-
-      <Button 
-        label="Cancel" 
-        color="red"
-        onClick={() => handleClick('Action Cancelled!')} 
-      />
-      <Footer text="© 2025 My React Task. All rights reserved." />
+      <Footer />
     </div>
   );
-};
+}
 
 export default App;

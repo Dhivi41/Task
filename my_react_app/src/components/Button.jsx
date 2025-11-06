@@ -1,17 +1,23 @@
-import React from 'react';
+import React from "react";
 
-const Button = ({ label, onClick, color }) => {
-  const buttonStyle = {
-    backgroundColor: color || '#007bff',
-    color: 'white',
-    border: 'none',
-    padding: '10px 20px',
-    borderRadius: '8px',
-    cursor: 'pointer',
-    margin: '10px',
-  };
-
-  return <button style={buttonStyle} onClick={onClick}>{label}</button>;
-};
+function Button({ label, onClick, type = "button", disabled = false }) {
+  return (
+    <button
+      type={type}
+      onClick={onClick}
+      disabled={disabled}
+      style={{
+        padding: "8px 12px",
+        backgroundColor: disabled ? "gray" : "lightblue",
+        border: "1px solid #333",
+        borderRadius: "4px",
+        cursor: "pointer",
+        margin: "4px",
+      }}
+    >
+      {label}
+    </button>
+  );
+}
 
 export default Button;

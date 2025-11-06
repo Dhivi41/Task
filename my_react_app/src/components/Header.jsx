@@ -1,15 +1,23 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
-const Header = ({ title }) => {
-  const headerStyle = {
-    backgroundColor: '#282c34',
-    color: 'white',
-    padding: '20px',
-    textAlign: 'center',
-    borderRadius: '8px'
-  };
-
-  return <header style={headerStyle}><h1>{title}</h1></header>;
-};
+function Header() {
+  return (
+    <header>
+      <h1>Welcome to My React Website</h1>
+      <nav>
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+        <Link to="/about">
+          <button>About</button>
+        </Link>
+        <Link to="/contact">
+          <button>Contact</button>
+        </Link>
+      </nav>
+    </header>
+  );
+}
 
 export default Header;
